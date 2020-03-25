@@ -21,6 +21,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nome do projeto</th>
+      <th scope="col">Código do projeto</th>
       <th scope="col">Ações</th>
       
     </tr>
@@ -35,6 +36,7 @@
     <tr>
       <th scope="row">#</th>
       <td>{{$projeto->titulo}}</td>
+      <td>{{$projeto->codigo}}</td>
       <td>
             <a href="{{url('projeto/verQrCode/'.$projeto->id_projeto)}}" class="btn btn-outline-success" >Qr code para avaliação projeto</a>
       </td>

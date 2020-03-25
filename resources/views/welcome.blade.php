@@ -97,7 +97,7 @@
                     
                     <a href="{{url('/projetos')}}">Avaliar projeto</a>
                     
-                    <a href="">Receber seu certificado</a>
+                    <a href="{{url('/certificado')}}">Receber seu certificado</a>
                 </div>
             </div>
         </div>

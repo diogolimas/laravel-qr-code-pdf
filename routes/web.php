@@ -14,6 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/certificado', function () {
+    return view('receberCertificado');
+});
+
 Route::get('/projetos','ProjetoController@index');
 
 Route::get('projeto/verQrCode/{id}','ProjetoController@irParaPaginaQrCode');
@@ -21,3 +26,5 @@ Route::get('/projeto/{id}', 'ProjetoController@gerarQrCode');
 Route::get('/projeto/{codigo}/visualizar', 'ProjetoController@verProjeto');
 Route::get('/projetos/cadastrar', 'ProjetoController@create')->name('cadastar-projeto');
 Route::post('/projetos/store','ProjetoController@store') ->name('store-projeto');
+
+Route::post('/projeto/certificado', 'ProjetoController@emitirCertificado');

@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use LaravelQRCode\Facades\QRCode;
-
+use PDF;
 
 class ProjetoController extends Controller
 {
     public function verProjeto($codigo){
         $projeto = DB::table('projeto')->where('codigo', $codigo)->first();
-        return view('verIndividualProjeto');
+        
+        return view('verIndividualProjeto', compact('projeto'));
     }
     public function gerarQrCode($id_projeto){
         $codigo_publico  = DB::table('projeto')
@@ -57,5 +58,19 @@ class ProjetoController extends Controller
             ]);
         return redirect('/')->with('success', 'Projeto cadastrado!');
         
+    }
+
+
+    //certificação
+
+    public function emitirCertificado(Request $request){
+        $projeto = DB::table('projeto')->where('codigo', $request->codigo)->first();
+
+        
+        
+        $pdf = PDF::loadView('pdf', compact('projeto'));
+        
+        return $pdf->setPaper('a4', 'landscape')->stream('certificado.pdf');
+
     }
 }
