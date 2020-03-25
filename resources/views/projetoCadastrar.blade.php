@@ -10,19 +10,23 @@
     <title>Cadastrar projeto</title>
 </head>
 <body>
-    <div class='container'>
+    <div class='container mt-5' >
 
     <h1>Cadastrar projeto</h1>
 
-            <form method="post" action="{{route('store-projeto'}}">
+            <form method="post" action="{{route('store-projeto')}}">
             @csrf
                 <div class="form-group">
                     <label for="titulo">Título do projeto</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Example input placeholder">
+                    <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Título do projeto">
                 </div>
                 <div class="form-group">
+                
                     <label for="resumo">Resumo</label>
-                    <input type="text" class="form-control" id="resumo" placeholder="Another input placeholder">
+
+                    
+                    <input type="text" name="resumo" class="form-control" id="resumo" placeholder="Resumo do projeto">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima illum reprehenderit assumenda ratione eius libero in? Id dolores delectus unde, optio culpa, laudantium eum perspiciatis officiis natus nobis iure.
                 </div>
 
         <div class="form-grop">

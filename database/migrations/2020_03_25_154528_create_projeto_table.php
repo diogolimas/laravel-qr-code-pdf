@@ -18,6 +18,7 @@ class CreateProjetoTable extends Migration
 
             $table->string('titulo');
             $table->string('resumo');
+            $table->string('codigo');
             $table->timestamps();
         });
     }
